@@ -1,0 +1,42 @@
+.card {
+  width: 300px;
+  height: 510px;
+  position: relative;
+}
+.card img {
+  width: 286px;
+  height: 286px;
+  object-fit: contain;
+  margin: 6px;
+}
+
+.card-body {
+  margin: 0 14px;
+}
+
+.card-body p {
+  margin-bottom: 0;
+}
+
+.card-title {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 25px;
+}
+.view-btn {
+  width: 100%;
+  padding: 5px 15px;
+  border: 0;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #dd9b49;
+  position: absolute;
+  bottom: 0;
+}
+
+.view-btn:hover {
+  background-color: #da7b0f;
+}

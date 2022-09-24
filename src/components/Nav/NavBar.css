@@ -22,3 +22,7 @@
   text-transform: uppercase;
   font-weight: 500;
 }
+
+.list a:hover {
+  color: orange;
+}
