@@ -13,3 +13,10 @@
 .cart-container {
   padding: 10px;
 }
+
+@media screen and (max-width: 1100px) {
+  .product-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}

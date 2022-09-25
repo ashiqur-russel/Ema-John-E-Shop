@@ -1,8 +1,7 @@
 import React from "react";
-import { Button } from "react-bootstrap";
 import "./Product.css";
 const Product = (props) => {
-  const { name, price, ratings, seller } = props.product;
+  const { id, name, price, ratings, seller } = props.product;
   return (
     <div className="card">
       <img src={props.img} alt="" />
@@ -16,7 +15,12 @@ const Product = (props) => {
       </div>
       <hr />
       <div className="btn-group">
-        <button className="view-btn">Add</button>
+        <button
+          className="view-btn"
+          onClick={() => props.handleAddToCart(props.product)}
+        >
+          Add To Cart
+        </button>
       </div>
     </div>
   );
