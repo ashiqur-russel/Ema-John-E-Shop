@@ -7,10 +7,25 @@ const Shop = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
 
-  const handleAddToCart = (product) => {
-    const newCart = [...cart, product];
+  const handleAddToCart = (selectedProduct) => {
+    let newCart = [];
+    // find if selected product is already exist
+    const exist = cart.find((product) => product.id === selectedProduct.id);
+    if (!exist) {
+      // if not exist then add quantity as 1 && set to cart with selected product with all previous products
+      selectedProduct.quantity = 1;
+      newCart = [...cart, selectedProduct];
+    } else {
+      //if exist then filter this selected item and seperate all other items from this product
+      const rest = cart.filter((product) => product.id !== selectedProduct.id);
+
+      // increase this selected id
+      selectedProduct.quantity = selectedProduct.quantity + 1;
+      // set new cart with rest products and esixting products with increasing quantity
+      newCart = [...rest, exist];
+    }
     setCart(newCart);
-    addToDb(product.id);
+    addToDb(selectedProduct.id);
   };
 
   // load data
@@ -22,9 +37,11 @@ const Shop = () => {
 
   //get data from local storage
   useEffect(() => {
+    // load the cart from local storage
     const storedCart = getStoredCart();
     const savedCart = [];
     for (const id in storedCart) {
+      // find the product
       const addedProduct = products.find((product) => product.id === id);
       if (addedProduct) {
         const quantity = storedCart[id];
