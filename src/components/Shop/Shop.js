@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useLoaderData } from "react-router-dom";
 import { addToDb, getStoredCart } from "../../utilities/fakedb";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
 const Shop = () => {
-  const [products, setProducts] = useState([]);
+  //const [products, setProducts] = useState([]);
+  const products = useLoaderData();
+  console.log(products);
   const [cart, setCart] = useState([]);
 
   const handleAddToCart = (selectedProduct) => {
@@ -29,12 +32,12 @@ const Shop = () => {
   };
 
   // load data
-  useEffect(() => {
+  /*   useEffect(() => {
     fetch("products.json")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
-
+ */
   //get data from local storage
   useEffect(() => {
     // load the cart from local storage

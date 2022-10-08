@@ -1,4 +1,8 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+
 import "./Cart.css";
 const Cart = ({ cart }) => {
   let total = 0;
@@ -20,8 +24,14 @@ const Cart = ({ cart }) => {
       <p>Total Shipping:{shipping}</p>
       <p>Tax:{tax}</p>
       <p>Grand Total:{parseFloat(grandTotal)}</p>
-      <button>Clear Cart</button>
-      <button>Procedd Checkout</button>
+      <button>
+        Clear Cart
+        <FontAwesomeIcon icon={faTrash} />
+      </button>
+      <button>
+        Proceed Checkout{" "}
+        <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
+      </button>
     </div>
   );
 };
