@@ -20,6 +20,8 @@ const Cart = ({ cart }) => {
       <p>Total Shipping:{shipping}</p>
       <p>Tax:{tax}</p>
       <p>Grand Total:{parseFloat(grandTotal)}</p>
+      <button>Clear Cart</button>
+      <button>Procedd Checkout</button>
     </div>
   );
 };
