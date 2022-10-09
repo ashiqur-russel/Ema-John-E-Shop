@@ -31,6 +31,9 @@
   border-radius: 50%;
   background-color: rgb(235, 87, 87, 0.3);
 }
+.btn-delete:hover {
+  background-color: rgb(235, 87, 87, 0.5);
+}
 
 .delete-icon {
   font-size: 31px;
