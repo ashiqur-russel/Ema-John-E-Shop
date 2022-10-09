@@ -24,14 +24,18 @@ const Cart = ({ cart }) => {
       <p>Total Shipping:{shipping}</p>
       <p>Tax:{tax}</p>
       <p>Grand Total:{parseFloat(grandTotal)}</p>
-      <button>
-        Clear Cart
-        <FontAwesomeIcon icon={faTrash} />
-      </button>
-      <button>
-        Proceed Checkout{" "}
-        <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
-      </button>
+      <p>
+        <button>
+          Clear Cart
+          <FontAwesomeIcon icon={faTrash} />
+        </button>
+      </p>
+      <p>
+        <button>
+          Proceed Checkout
+          <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
+        </button>
+      </p>
     </div>
   );
 };
