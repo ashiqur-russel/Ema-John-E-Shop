@@ -8,6 +8,8 @@ import About from "./components/About/About";
 import { ProductsAndCartLoader } from "./loaders/ProductsAndCartLoader";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
+import Shipping from "./components/Shipping/Shipping";
+import PrivateRoute from "./routes/PrivateRoute";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -40,6 +42,15 @@ const router = createBrowserRouter([
       {
         path: "signup",
         element: <Signup></Signup>,
+      },
+      {
+        path: "shipping",
+        element: (
+          <PrivateRoute>
+            {" "}
+            <Shipping></Shipping>
+          </PrivateRoute>
+        ),
       },
     ],
   },

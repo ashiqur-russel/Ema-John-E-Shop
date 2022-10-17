@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { addToDb, getStoredCart } from "../../utilities/fakedb";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
@@ -69,7 +71,14 @@ const Shop = () => {
         })}
       </div>
       <div className="cart-container">
-        <Cart cart={cart}></Cart>
+        <Cart cart={cart}>
+          <Link to="/orders">
+            <button>
+              Review Order
+              <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
+            </button>
+          </Link>
+        </Cart>
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import ReviewItem from "../ReviewItem/ReviewItem";
 import Cart from "../Cart/Cart";
 import { removeFromDb } from "../../utilities/fakedb";
 const Order = () => {
-  const { products, initialCart } = useLoaderData();
+  const { initialCart } = useLoaderData();
   const [cart, setCart] = useState(initialCart);
 
   // Remove item handler
@@ -25,9 +25,18 @@ const Order = () => {
             product={product}
           ></ReviewItem>
         ))}
+        {cart.length === 0 && (
+          <h2>
+            No Items for Review. Please <Link to="/">Shop more</Link>
+          </h2>
+        )}
       </div>
       <div className="cart-container">
-        <Cart cart={cart}></Cart>
+        <Cart cart={cart}>
+          <Link to="/shipping">
+            <button>Proceed Shipping</button>
+          </Link>
+        </Cart>
       </div>
     </div>
   );

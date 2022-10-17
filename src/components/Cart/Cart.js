@@ -1,10 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 import "./Cart.css";
-const Cart = ({ cart }) => {
+const Cart = ({ cart, children, clearCart }) => {
   let total = 0;
   let shipping = 0;
   let grandTotal = 0;
@@ -30,12 +29,7 @@ const Cart = ({ cart }) => {
           <FontAwesomeIcon icon={faTrash} />
         </button>
       </p>
-      <p>
-        <button>
-          Proceed Checkout
-          <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
-        </button>
-      </p>
+      <p>{children}</p>
     </div>
   );
 };
