@@ -26,3 +26,7 @@
 .list a:hover {
   color: orange;
 }
+
+.btn-logOut a {
+  color: rgb(206, 42, 31);
+}
